@@ -1,5 +1,5 @@
 {
-  "name": "hydra",
+  "name": "pokedex",
   "version": "1.0.0",
   "description": "basic backend appliction with express, sequelize, and postgres",
   "main": "index.js",
