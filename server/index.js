@@ -35,5 +35,6 @@ app.use((err, req, res, next) => {
 // sync DB with app before server begins
 db.sync()
   .then(() => {
+    console.log('synced db to postgres');
     app.listen(PORT, () => console.log(`listening on port: ${PORT}`));
   })

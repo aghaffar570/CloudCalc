@@ -1,7 +1,8 @@
 const router = require('express').Router();
 
 // mini routers
-router.use('/user', require('./user'))
+router.use('/trainers', require('./trainer'))
+router.use('/pokemons', require('./pokemon'))
 
 // requested route was Not Found
 router.use((req, res, next) => {
