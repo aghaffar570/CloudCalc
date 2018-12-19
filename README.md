@@ -23,3 +23,13 @@ and uses React for view rendering.
 ### Glue
 - webpack
 - babel
+
+## Demo
+
+First set up a postgreSQL DB on your local machine and create a database table with the name pokedex.
+
+Begin with `npm install`
+
+You can seed the DB with the given data in seed.js by `npm run seed` or inputing data manually.
+
+Lastly, run app with `npm run start-dev` and view on browser.
