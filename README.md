@@ -18,6 +18,7 @@ and uses React for view rendering.
 - pg
 - pg-hstore
 - sequelize
+- postgresql
 
 ### Glue
 - webpack
