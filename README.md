@@ -26,10 +26,10 @@ and uses React for view rendering.
 
 ## Demo
 
-First set up a postgreSQL DB on your local machine and create a database table with the name pokedex.
+First set up a postgreSQL DB on your local machine and create a database table with the default name pokedex (configured in package.json).
 
 Begin with `npm install`
 
 You can seed the DB with the given data in seed.js by `npm run seed` or inputing data manually.
 
-Lastly, run app with `npm run start-dev` and view on browser.
+Lastly, run app with `npm run start-dev` and view on browser on `localhost:3000`.
