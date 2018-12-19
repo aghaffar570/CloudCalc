@@ -1,11 +1,24 @@
-# BackendSetup
+# BasicAppSetup
 
-A basic Node Application that
+A basic Web Application that
 connects to a Postgres Database (Defaulted Name: pokedex)
+and uses React for view rendering.
 
-## Technologies used
+*Utilizes the MVC pattern
 
-- Express
+## Technologies
+
+### FE
+- react
+- react-dom
+- react-router-dom
+
+### BE
+- express
 - pg
 - pg-hstore
 - sequelize
+
+### Glue
+- webpack
+- babel
