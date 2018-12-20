@@ -1,11 +1,4 @@
-import React, { Component } from 'react'
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        Hey bbb Pokemons!
-      </div>
-    )
-  }
-}
+export { default as Navbar } from './navbar'
+export { default as Pokemon } from './pokemon'
+export { default as Home } from './home'
