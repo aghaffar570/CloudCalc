@@ -12,6 +12,7 @@ and uses React for view rendering.
 - react
 - react-dom
 - react-router-dom
+- redux
 
 ### BE
 - express
@@ -23,6 +24,8 @@ and uses React for view rendering.
 ### Glue
 - webpack
 - babel
+- axios
+- react-redux
 
 ## Demo
 
