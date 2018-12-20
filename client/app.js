@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-import { Navbar } from './components'
-import Routes from './routes'
+import { Calclog, Calculator } from './components'
+import { fetchOperation } from './store/calclog'
 
-const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <Routes />
-    </div>
-  )
+class App extends Component {
+
+  componentDidMount() {
+    this.props.getOperations()
+  }
+
+  render () {
+    console.log('state upsate', this.props)
+    return (
+      <div>
+        <Calclog />
+        <Calculator />
+      </div>
+    )
+  }
 }
 
-export default App
+const mapState = (state) => {
+  return {
+    operations: state.operation
+  }
+}
+const mapDispatch = (dispatch) => {
+  return {
+    getOperations: () => dispatch(fetchOperation())
+  }
+}
+
+export default connect(mapState, mapDispatch)(App)
