@@ -15,6 +15,7 @@ export function fetchOperation () {
     return axios.get('/api/calc')
       .then(res => res.data)
       .then(operations => {
+        console.log(operations, 'LOCATED IN STORE')
         const action = getOperation(operations);
         dispatch(action);
       })

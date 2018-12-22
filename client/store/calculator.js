@@ -30,8 +30,8 @@ export function postOperation (op) {
 // reducer
 export default function calculatorReducer (state = initialState, action) {
   switch (action.type) {
-    case GET_OPERATION:
-      return action.operation;
+    // case GET_OPERATION:
+    //   return action.operation;
     default:
       return state;
   };

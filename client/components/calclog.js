@@ -4,34 +4,27 @@ import { fetchOperation } from '../store/calclog'
 
 import '../styles/calclog.css'
 
-class Calclog extends Component {
-  // componentDidMount() {
-  //   this.props.getOperations()
-  // }
-
-
-  render() {
-    const operations = this.props.operations
-    console.log(operations, 'sadfasf')
+const Calclog = ({ operations }) => {
+  console.log(operations, 'LOADED FROM DB')
+  const ops = operations.length ? operations.map( ops => {
     return (
-      <div className="left">
-      hellow
-        {
-          operations &&
-          operations.map( item => {
-            <p>{item.operation}</p>
-          })
-        }
-      </div>
+      <p key={ops.id}>{ops.id}.  {ops.operation}  =  {ops.value}</p>
     )
-  }
+  }) : null ;
+  return (
+    <div className="left">
+      { ops }
+    </div>
+  )
 }
 
 
 
+
 const mapState = (state) => {
+  console.log(state, 'STATE IN CALCLOG')
   return {
-    operations: state.operation
+    operations: state.calclog
   }
 }
 const mapDispatch = (dispatch) => {

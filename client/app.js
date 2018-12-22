@@ -6,11 +6,11 @@ import './styles/app.css'
 import { Calclog, Calculator } from './components'
 import { fetchOperation } from './store/calclog'
 
-class App extends Component {
+export default class App extends Component {
 
-  componentDidMount() {
-    this.props.getOperations()
-  }
+  // componentDidMount() {
+  //   this.props.getOperations()
+  // }
 
   render () {
     console.log('state upsate', this.props)
@@ -27,15 +27,15 @@ class App extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    operations: state.operation
-  }
-}
-const mapDispatch = (dispatch) => {
-  return {
-    getOperations: () => dispatch(fetchOperation())
-  }
-}
+// const mapState = (state) => {
+//   return {
+//     operations: state.operation
+//   }
+// }
+// const mapDispatch = (dispatch) => {
+//   return {
+//     getOperations: () => dispatch(fetchOperation())
+//   }
+// }
 
-export default connect(mapState, mapDispatch)(App)
+// export default connect(mapState, mapDispatch)(App)

@@ -9,7 +9,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import individual reducers
 import calculator from './calculator';
-import calclog from './calclog';
+import calclog, { fetchOperation } from './calclog';
 
 const reducer = combineReducers({
   calculator,
@@ -24,4 +24,5 @@ const store = createStore(
   ))
 );
 
+store.dispatch(fetchOperation()) // retrieve data first;
 export default store;
