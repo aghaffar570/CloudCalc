@@ -11,8 +11,16 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
-router.post('/', (req, res) => {
-
+router.post('/', (req, res, next) => {
+  const data = {...req.body}
+  data.value = `${data.value}`
+  console.log(data, req.body);
+  Calculation.create(data)
+    .then(operation => {
+      console.log('NEW DATA CREATED', operation)
+      res.json(operation)
+    })
+    .catch(next)
 })
 
 router.put('/', (req, res) => {

@@ -25,7 +25,7 @@ A Calculator App that logs every calculation for easy access.
 
 ## Demo
 
-First set up a postgreSQL on your local machine and create a DB table with the defaulted name (configured in package.json as name).
+First set up postgreSQL on your local machine and create a table (defaulted name configured in package.json as name).
 
 Begin with `npm install`
 

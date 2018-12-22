@@ -10,41 +10,35 @@ class Calculator extends Component {
     super()
     this.state = {
       operation: '',
-      result: ''
+      value: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   handleChange(e) {
     const operation = e.target.value;
-    const result = calculate(operation);
-    this.setState({ operation, result })
+    const value = calculate(operation);
+    this.setState({ operation, value })
 
     console.log(this.state)
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.postOperation('hey')
-    console.log('clicked btn')
-  }
-
-  handleKeyPress(e) {
-    e.preventDefault()
-    if(e.key.toLowerCase() === 'enter'){
-      console.log('key pressed', e.key, e.keyCode, e)
+    if(!Number.isNaN(this.state.value)) {
+      console.log('yay')
+      this.props.postOperation(this.state)
     }
+    console.log('clicked btn', this.state, typeof this.state.value)
   }
 
   render() {
     return (
       <div className="right">
         <form onSubmit={this.handleSubmit}>
-        {/* onKeyPress={this.handleKeyPress} */}
-          Math:
+          Calculate:
           <input type="text" value={this.state.operation} onChange={this.handleChange}/>
           <button>Answer</button>
         </form>
@@ -55,7 +49,7 @@ class Calculator extends Component {
 
 const mapDispatch = (dispatch) => {
   return {
-    postOperation: () => dispatch(postOperation)
+    postOperation: (state) => dispatch(postOperation(state))
   }
 }
 

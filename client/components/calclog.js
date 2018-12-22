@@ -11,6 +11,7 @@ const Calclog = ({ operations }) => {
       <p key={ops.id}>{ops.id}.  {ops.operation}  =  {ops.value}</p>
     )
   }) : null ;
+
   return (
     <div className="left">
       { ops }
