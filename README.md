@@ -1,6 +1,6 @@
 # Calc App
 
-A simple Calculator App that logs every calculation for easy access.
+A Calculator App that logs every calculation for easy access.
 
 ## Technologies
 
@@ -25,10 +25,8 @@ A simple Calculator App that logs every calculation for easy access.
 
 ## Demo
 
-First set up a postgreSQL DB on your local machine and create a database table with the defaulted name, pokedex (configured in package.json).
+First set up a postgreSQL on your local machine and create a DB table with the defaulted name (configured in package.json as name).
 
 Begin with `npm install`
-
-You can seed the DB with the given data in seed.js by `npm run seed` or input data manually.
 
 Lastly, run the app with `npm run start-dev` and view on browser on `localhost:3000`.
