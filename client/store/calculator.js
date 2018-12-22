@@ -14,14 +14,16 @@ export function getOperation (operation) {
   return action;
 };
 
-export function postOperation ({operation, value}) {
+export function postOperation (op) {
+  console.log('OP in the store!@#!@$!$', op)
   return function thunk (dispatch) {
-    return axios.post('/api/calc', { operation, value })
-      .then(res => res.data)
-      .then(operations => {
-        const action = getOperation(operations);
-        dispatch(action);
-      });
+    dispatch(getOperation(op))
+    // return axios.post('/api/calc', { operation, value })
+    //   .then(res => res.data)
+    //   .then(operations => {
+    //     const action = getOperation(operations);
+    //     dispatch(action);
+    //   });
   };
 };
 

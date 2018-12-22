@@ -1,10 +1,6 @@
-# BasicAppSetup
+# Calc App
 
-A basic Web Application that
-connects to a Postgres Database (Defaulted Name: pokedex)
-and uses React for view rendering.
-
-*Utilizes the MVC pattern
+A simple Calculator App that logs every calculation for easy access.
 
 ## Technologies
 

@@ -5,6 +5,7 @@ import { Router } from 'react-router-dom'
 import history from './history'
 import store from './store'
 
+import './styles/index.css'
 import App from './app'
 
 ReactDOM.render(

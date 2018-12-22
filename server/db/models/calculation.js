@@ -3,11 +3,11 @@ const db = require('../index');
 
 const Calculation = db.define('calculation', {
   operation: {
-    type: Sequelize.TEXT,
+    type: Sequelize.STRING,
     allowNull: false
   },
   value: {
-    type: Sequelize.TEXT,
+    type: Sequelize.STRING,
     allowNull: false,
   }
 })

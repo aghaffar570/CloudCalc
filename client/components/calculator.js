@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-// import { connect } from "react-redux"
+import { connect } from "react-redux"
+import { postOperation } from "../store/calculator"
 import calculate from 'raabbajam-calculator'
-// import { postOperation } from "../store";
 
-export default class Calculator extends Component {
+import '../styles/calculator.css'
+
+class Calculator extends Component {
   constructor() {
     super()
     this.state = {
@@ -13,6 +15,7 @@ export default class Calculator extends Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   handleChange(e) {
@@ -25,20 +28,40 @@ export default class Calculator extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    this.props.postOperation('hey')
+    console.log('clicked btn')
+  }
 
+  handleKeyPress(e) {
+    e.preventDefault()
+    if(e.key.toLowerCase() === 'enter'){
+      console.log('key pressed', e.key, e.keyCode, e)
+    }
   }
 
   render() {
     return (
-      <div>
-        <form>
-          hey
+      <div className="right">
+        <form onSubmit={this.handleSubmit}>
+        {/* onKeyPress={this.handleKeyPress} */}
+          Math:
           <input type="text" value={this.state.operation} onChange={this.handleChange}/>
+          <button>Answer</button>
         </form>
       </div>
     )
   }
 }
+
+const mapDispatch = (dispatch) => {
+  return {
+    postOperation: () => dispatch(postOperation)
+  }
+}
+
+export default connect(null, mapDispatch)(Calculator)
+
+
 
 
 

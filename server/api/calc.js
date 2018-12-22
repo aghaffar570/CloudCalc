@@ -5,7 +5,7 @@ const { add, subtract, multiply, divide } = require('./math.util')
 router.get('/', (req, res, next) => {
   Calculation.findAll()
     .then(operations => {
-      console.log(operations, 'operations from BE');
+      // console.log(operations, 'operations from BE');
       res.json(operations)
     })
     .catch(next)

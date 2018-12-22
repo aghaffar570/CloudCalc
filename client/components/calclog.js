@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { fetchOperation } from '../store/calclog'
 
+import '../styles/calclog.css'
+
 class Calclog extends Component {
   // componentDidMount() {
   //   this.props.getOperations()
   // }
 
+
   render() {
     const operations = this.props.operations
     console.log(operations, 'sadfasf')
     return (
-      <div>
+      <div className="left">
+      hellow
         {
           operations &&
           operations.map( item => {
