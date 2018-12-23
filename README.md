@@ -7,8 +7,6 @@ A Calculator App that logs every calculation for easy access.
 ### FE
 - react
 - react-dom
-- react-router-dom
-- redux
 
 ### BE
 - express
@@ -21,12 +19,11 @@ A Calculator App that logs every calculation for easy access.
 - webpack
 - babel
 - axios
-- react-redux
 
 ## Demo
 
-First set up postgreSQL on your local machine and create a table (defaulted name configured in package.json as name).
+First set up postgreSQL on your local machine and create a table (defaulted name configured in package.json).
 
 Begin with `npm install`
 
-Lastly, run the app with `npm run start-dev` and view on browser on `localhost:3000`.
+Then, run the app with `npm run start-dev` and view the app on `localhost:3000`.

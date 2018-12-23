@@ -24,5 +24,5 @@ const store = createStore(
   ))
 );
 
-store.dispatch(fetchOperation()) // retrieve data first;
+// store.dispatch(fetchOperation()) // retrieve data first;
 export default store;

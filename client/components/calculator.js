@@ -1,61 +1,51 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux"
-import { postOperation } from "../store/calculator"
 import calculate from 'raabbajam-calculator'
+import axios from 'axios'
 
 import '../styles/calculator.css'
 
-class Calculator extends Component {
+export default class Calculator extends Component {
   constructor() {
     super()
     this.state = {
       operation: '',
-      value: ''
+      result: ''
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     const operation = e.target.value;
-    const value = calculate(operation);
-    this.setState({ operation, value })
-
-    console.log(this.state)
+    const result = `${calculate(operation)}`;
+    this.setState({ operation, result })
+    console.log(this.state, operation, result)
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault()
-    if(!Number.isNaN(this.state.value)) {
-      console.log('yay')
-      this.props.postOperation(this.state)
+    if(!Number.isNaN(this.state.result)) {
+      axios.post('/api/calc', this.state)
+      .then(res => res.data)
+      .then(newOperation => {
+        console.log('AFTER POST', newOperation)
+        this.props.addOperation(newOperation)
+      });
     }
-    console.log('clicked btn', this.state, typeof this.state.value)
+    this.setState({
+      operation: '',
+      result: ''
+    })
+    console.log('clicked btn', this.state)
   }
 
   render() {
     return (
       <div className="right">
         <form onSubmit={this.handleSubmit}>
-          Calculate:
-          <input type="text" value={this.state.operation} onChange={this.handleChange}/>
+          <label htmlFor="calc">Calculate: </label>
+          <input id="clac" type="text" value={this.state.operation} onChange={this.handleChange}/>
           <button>Answer</button>
         </form>
       </div>
     )
   }
 }
-
-const mapDispatch = (dispatch) => {
-  return {
-    postOperation: (state) => dispatch(postOperation(state))
-  }
-}
-
-export default connect(null, mapDispatch)(Calculator)
-
-
-
-
-
