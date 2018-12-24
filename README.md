@@ -2,7 +2,7 @@
 
 A Calculator App that logs every calculation for easy access.
 
-* Basic app structure was inspired by https://github.com/FullstackAcademy/boilermaker
+* Basic app structure inspired by https://github.com/FullstackAcademy/boilermaker
 
 ## Technologies
 

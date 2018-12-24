@@ -8,7 +8,8 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      operations: []
+      operations: [],
+      updatedVarOpertions: []
     }
   }
 
@@ -43,12 +44,20 @@ export default class App extends Component {
       });
   }
 
+  updateVariable = () => {
+    console.log('update variable!!!')
+  }
+
   render () {
-    console.log('state upsate', this.props, this.state)
+    // console.log('state upsate', this.props, this.state)
     return (
       <div className="container">
-          <Calclog operations={this.state.operations} deleteLog={this.deleteLog}/>
-          <Calculator addOperation={this.addOperation}/>
+          <Calclog
+            operations={this.state.operations}
+            deleteLog={this.deleteLog}
+            updateVariable={this.updateVariable}/>
+          <Calculator
+            addOperation={this.addOperation}/>
       </div>
     )
   }
