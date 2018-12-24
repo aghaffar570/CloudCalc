@@ -15,14 +15,17 @@ export default class Calculator extends Component {
 
   handleChange = (e) => {
     const operation = e.target.value;
-    const result = `${calculate(operation)}`;
+    const result = `${calculate(operation)}`
     this.setState({ operation, result })
     console.log(this.state, operation, result)
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if(!Number.isNaN(this.state.result)) {
+    console.log(this.state)
+    if(this.state.result !== 'NaN'
+        && this.state.result.length
+        && this.state.result !== 'undefined') {
       axios.post('/api/calc', this.state)
       .then(res => res.data)
       .then(newOperation => {

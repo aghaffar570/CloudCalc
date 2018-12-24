@@ -1,0 +1,24 @@
+.left {
+  border: 1px dotted;
+  width: 40%;
+  height: 100%;
+  padding: 25px;
+}
+
+.left .opList {
+  border: 1px solid #eee;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.left button {
+
+}
+
+.left .variable-input input{
+  float: right;
+  width: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

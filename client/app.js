@@ -47,12 +47,8 @@ export default class App extends Component {
     console.log('state upsate', this.props, this.state)
     return (
       <div className="container">
-        <div className="left">
           <Calclog operations={this.state.operations} deleteLog={this.deleteLog}/>
-        </div>
-        <div className="right">
           <Calculator addOperation={this.addOperation}/>
-        </div>
       </div>
     )
   }

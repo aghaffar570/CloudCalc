@@ -2,11 +2,14 @@
 
 A Calculator App that logs every calculation for easy access.
 
+* Basic app structure was inspired by https://github.com/FullstackAcademy/boilermaker
+
 ## Technologies
 
 ### FE
 - react
 - react-dom
+- expresson-calculator
 
 ### BE
 - express
